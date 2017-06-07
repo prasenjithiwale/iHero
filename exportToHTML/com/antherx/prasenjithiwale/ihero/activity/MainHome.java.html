@@ -1,0 +1,282 @@
+<html>
+<head>
+<title>MainHome.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #606366; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(204,120,50); }
+.s1 { color: rgb(169,183,198); }
+.s2 { color: rgb(106,135,89); }
+.s3 { color: rgb(104,151,187); }
+.s4 { color: rgb(98,151,85); font-style: italic; }
+.s5 { color: rgb(128,128,128); }
+</style>
+</head>
+<BODY BGCOLOR="#2b2b2b">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+MainHome.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">package </span><span class="s1">com.antherx.prasenjithiwale.ihero.activity</span><span class="s0">;</span><span class="s1"> 
+ 
+</span><span class="s0">import </span><span class="s1">android.content.Context</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.content.Intent</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.content.res.Resources</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.graphics.Rect</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.support.design.widget.AppBarLayout</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.support.design.widget.CollapsingToolbarLayout</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.support.v7.app.AppCompatActivity</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.os.Bundle</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.support.v7.widget.DefaultItemAnimator</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.support.v7.widget.GridLayoutManager</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.support.v7.widget.RecyclerView</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.support.v7.widget.Toolbar</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.util.TypedValue</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.view.Menu</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.view.MenuInflater</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.view.MenuItem</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.view.View</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.widget.ImageView</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.widget.TextView</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.widget.Toast</span><span class="s0">;</span><span class="s1"> 
+ 
+</span><span class="s0">import </span><span class="s1">com.antherx.prasenjithiwale.ihero.Purchase</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">com.antherx.prasenjithiwale.ihero.R</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">com.antherx.prasenjithiwale.ihero.important.Album</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">com.antherx.prasenjithiwale.ihero.important.AlbumAdapter</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">com.bumptech.glide.Glide</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">com.bumptech.glide.load.engine.DiskCacheStrategy</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">com.facebook.Profile</span><span class="s0">;</span><span class="s1"> 
+ 
+</span><span class="s0">import </span><span class="s1">org.w3c.dom.Text</span><span class="s0">;</span><span class="s1"> 
+ 
+</span><span class="s0">import </span><span class="s1">java.util.ArrayList</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">java.util.List</span><span class="s0">;</span><span class="s1"> 
+ 
+</span><span class="s0">import </span><span class="s1">de.hdodenhof.circleimageview.CircleImageView</span><span class="s0">;</span><span class="s1"> 
+ 
+</span><span class="s0">public class </span><span class="s1">MainHome </span><span class="s0">extends </span><span class="s1">AppCompatActivity { 
+ 
+    </span><span class="s0">private </span><span class="s1">RecyclerView recyclerView</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">AlbumAdapter albumAdapter</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">List&lt;Album&gt; albumList</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Context myContext</span><span class="s0">;</span><span class="s1"> 
+    Profile profile</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">TextView NameLove</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">TextView IdLove</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">String name</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">String id</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">CircleImageView circleImageViewOnHome</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">String profilePictureURL</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">ImageView loveProf</span><span class="s0">;</span><span class="s1"> 
+ 
+    @Override 
+    </span><span class="s0">protected void </span><span class="s1">onCreate(Bundle savedInstanceState) { 
+        </span><span class="s0">super</span><span class="s1">.onCreate(savedInstanceState)</span><span class="s0">;</span><span class="s1"> 
+        setContentView(R.layout.activity_main_home)</span><span class="s0">;</span><span class="s1"> 
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar)</span><span class="s0">;</span><span class="s1"> 
+        setSupportActionBar(toolbar)</span><span class="s0">;</span><span class="s1"> 
+ 
+        NameLove = (TextView)findViewById(R.id.love_music)</span><span class="s0">;</span><span class="s1"> 
+        loveProf =(ImageView)findViewById(R.id.love_prof_img)</span><span class="s0">;</span><span class="s1"> 
+ 
+        circleImageViewOnHome = (CircleImageView)findViewById(R.id.imgProfilePictureOnHome)</span><span class="s0">;</span><span class="s1"> 
+ 
+        initCollapsingToolbar()</span><span class="s0">;</span><span class="s1"> 
+ 
+        profile = Profile.getCurrentProfile()</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">if </span><span class="s1">(profile != </span><span class="s0">null</span><span class="s1">){ 
+            name = profile.getName()</span><span class="s0">;</span><span class="s1"> 
+            id = profile.getId()</span><span class="s0">;</span><span class="s1"> 
+            NameLove.setText(profile.getFirstName())</span><span class="s0">;</span><span class="s1"> 
+ 
+            profilePictureURL = </span><span class="s2">&quot;http://graph.facebook.com/&quot; </span><span class="s1">+ profile.getId() + </span><span class="s2">&quot;/picture?type=large&quot;</span><span class="s0">;</span><span class="s1"> 
+            Glide.with(</span><span class="s0">this</span><span class="s1">).load(profilePictureURL) 
+                    .thumbnail(</span><span class="s3">0.5f</span><span class="s1">) 
+                    .crossFade() 
+                    .diskCacheStrategy(DiskCacheStrategy.ALL) 
+                    .into(loveProf)</span><span class="s0">;</span><span class="s1"> 
+ 
+        } 
+ 
+        recyclerView = (RecyclerView)findViewById(R.id.recycler_view)</span><span class="s0">;</span><span class="s1"> 
+        albumList = </span><span class="s0">new </span><span class="s1">ArrayList&lt;&gt;()</span><span class="s0">;</span><span class="s1"> 
+        albumAdapter = </span><span class="s0">new </span><span class="s1">AlbumAdapter(</span><span class="s0">this, </span><span class="s1">albumList)</span><span class="s0">;</span><span class="s1"> 
+ 
+        RecyclerView.LayoutManager mLayoutManager = </span><span class="s0">new </span><span class="s1">GridLayoutManager(</span><span class="s0">this, </span><span class="s3">2</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        recyclerView.setLayoutManager(mLayoutManager)</span><span class="s0">;</span><span class="s1"> 
+        recyclerView.addItemDecoration(</span><span class="s0">new </span><span class="s1">GridSpacingItemDecoration(</span><span class="s3">2</span><span class="s0">, </span><span class="s1">dpToPx(</span><span class="s3">10</span><span class="s1">)</span><span class="s0">, true</span><span class="s1">))</span><span class="s0">;</span><span class="s1"> 
+        recyclerView.setItemAnimator(</span><span class="s0">new </span><span class="s1">DefaultItemAnimator())</span><span class="s0">;</span><span class="s1"> 
+        recyclerView.setAdapter(albumAdapter)</span><span class="s0">;</span><span class="s1"> 
+        prepareAlbums()</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">try </span><span class="s1">{ 
+            Glide.with(</span><span class="s0">this</span><span class="s1">).load(</span><span class="s2">&quot;https://s-media-cache-ak0.pinimg.com/236x/e8/96/fc/e896fc42b6911272129724e8c7383489.jpg&quot;</span><span class="s1">).into((ImageView) findViewById(R.id.backdrop))</span><span class="s0">;</span><span class="s1"> 
+        } </span><span class="s0">catch </span><span class="s1">(Exception e) { 
+            e.printStackTrace()</span><span class="s0">;</span><span class="s1"> 
+        } 
+ 
+    } 
+ 
+ 
+        </span><span class="s4">/** 
+         * Initializing collapsing toolbar 
+         * Will show and hide the toolbar title on scroll 
+         */</span><span class="s1"> 
+        </span><span class="s0">private void </span><span class="s1">initCollapsingToolbar() { 
+            </span><span class="s0">final </span><span class="s1">CollapsingToolbarLayout collapsingToolbar = 
+                    (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar)</span><span class="s0">;</span><span class="s1"> 
+            collapsingToolbar.setTitle(</span><span class="s2">&quot; &quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+            AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.appbar)</span><span class="s0">;</span><span class="s1"> 
+            appBarLayout.setExpanded(</span><span class="s0">true</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+ 
+            </span><span class="s5">// hiding &amp; showing the title when toolbar expanded &amp; collapsed</span><span class="s1"> 
+            appBarLayout.addOnOffsetChangedListener(</span><span class="s0">new </span><span class="s1">AppBarLayout.OnOffsetChangedListener() { 
+                </span><span class="s0">boolean </span><span class="s1">isShow = </span><span class="s0">false;</span><span class="s1"> 
+                </span><span class="s0">int </span><span class="s1">scrollRange = -</span><span class="s3">1</span><span class="s0">;</span><span class="s1"> 
+ 
+                @Override 
+                </span><span class="s0">public void </span><span class="s1">onOffsetChanged(AppBarLayout appBarLayout</span><span class="s0">, int </span><span class="s1">verticalOffset) { 
+                    </span><span class="s0">if </span><span class="s1">(scrollRange == -</span><span class="s3">1</span><span class="s1">) { 
+                        scrollRange = appBarLayout.getTotalScrollRange()</span><span class="s0">;</span><span class="s1"> 
+                    } 
+                    </span><span class="s0">if </span><span class="s1">(scrollRange + verticalOffset == </span><span class="s3">0</span><span class="s1">) { 
+                        collapsingToolbar.setTitle(profile.getName())</span><span class="s0">;</span><span class="s1"> 
+                        Glide.with(getApplicationContext()).load(profilePictureURL) 
+                                .thumbnail(</span><span class="s3">0.5f</span><span class="s1">) 
+                                .crossFade() 
+                                .diskCacheStrategy(DiskCacheStrategy.ALL) 
+                                .into(circleImageViewOnHome)</span><span class="s0">;</span><span class="s1"> 
+                        isShow = </span><span class="s0">true;</span><span class="s1"> 
+                    } </span><span class="s0">else if </span><span class="s1">(isShow) { 
+                        collapsingToolbar.setTitle(</span><span class="s2">&quot; &quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+                        circleImageViewOnHome.setImageResource(</span><span class="s3">0</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+                        isShow = </span><span class="s0">false;</span><span class="s1"> 
+                    } 
+                } 
+            })</span><span class="s0">;</span><span class="s1">} 
+ 
+        </span><span class="s4">/** 
+         * Adding few albums for testing 
+         */</span><span class="s1"> 
+        </span><span class="s0">private void </span><span class="s1">prepareAlbums() { 
+ 
+            </span><span class="s0">int</span><span class="s1">[] covers = </span><span class="s0">new int</span><span class="s1">[]{ 
+                    R.drawable.d1</span><span class="s0">,</span><span class="s1">R.drawable.d2</span><span class="s0">,</span><span class="s1">R.drawable.d4</span><span class="s0">,</span><span class="s1">R.drawable.d5</span><span class="s0">,</span><span class="s1">R.drawable.d6</span><span class="s0">,</span><span class="s1">R.drawable.d7</span><span class="s0">,</span><span class="s1"> 
+                    R.drawable.d8</span><span class="s0">,</span><span class="s1">R.drawable.d9</span><span class="s0">,</span><span class="s1">R.drawable.d10</span><span class="s0">,</span><span class="s1">R.drawable.d3</span><span class="s0">,</span><span class="s1">R.drawable.step2}</span><span class="s0">;</span><span class="s1"> 
+ 
+            Album a = </span><span class="s0">new </span><span class="s1">Album(</span><span class="s2">&quot;Prasenjit Vijay Hiwale&quot;</span><span class="s0">, </span><span class="s3">13</span><span class="s0">, </span><span class="s1">covers[</span><span class="s3">0</span><span class="s1">])</span><span class="s0">;</span><span class="s1"> 
+            albumList.add(a)</span><span class="s0">;</span><span class="s1"> 
+ 
+            a = </span><span class="s0">new </span><span class="s1">Album(</span><span class="s2">&quot;Prasenjit&quot;</span><span class="s0">, </span><span class="s3">8</span><span class="s0">, </span><span class="s1">covers[</span><span class="s3">1</span><span class="s1">])</span><span class="s0">;</span><span class="s1"> 
+            albumList.add(a)</span><span class="s0">;</span><span class="s1"> 
+ 
+            a = </span><span class="s0">new </span><span class="s1">Album(</span><span class="s2">&quot;Prasenjit&quot;</span><span class="s0">, </span><span class="s3">11</span><span class="s0">, </span><span class="s1">covers[</span><span class="s3">2</span><span class="s1">])</span><span class="s0">;</span><span class="s1"> 
+            albumList.add(a)</span><span class="s0">;</span><span class="s1"> 
+ 
+            a = </span><span class="s0">new </span><span class="s1">Album(</span><span class="s2">&quot;Prasenjit&quot;</span><span class="s0">, </span><span class="s3">12</span><span class="s0">, </span><span class="s1">covers[</span><span class="s3">3</span><span class="s1">])</span><span class="s0">;</span><span class="s1"> 
+            albumList.add(a)</span><span class="s0">;</span><span class="s1"> 
+ 
+            a = </span><span class="s0">new </span><span class="s1">Album(</span><span class="s2">&quot;Prasenjit&quot;</span><span class="s0">, </span><span class="s3">14</span><span class="s0">, </span><span class="s1">covers[</span><span class="s3">4</span><span class="s1">])</span><span class="s0">;</span><span class="s1"> 
+            albumList.add(a)</span><span class="s0">;</span><span class="s1"> 
+ 
+            a = </span><span class="s0">new </span><span class="s1">Album(</span><span class="s2">&quot;Prasenjit&quot;</span><span class="s0">, </span><span class="s3">1</span><span class="s0">, </span><span class="s1">covers[</span><span class="s3">5</span><span class="s1">])</span><span class="s0">;</span><span class="s1"> 
+            albumList.add(a)</span><span class="s0">;</span><span class="s1"> 
+ 
+            a = </span><span class="s0">new </span><span class="s1">Album(</span><span class="s2">&quot;Prasenjit&quot;</span><span class="s0">, </span><span class="s3">11</span><span class="s0">, </span><span class="s1">covers[</span><span class="s3">6</span><span class="s1">])</span><span class="s0">;</span><span class="s1"> 
+            albumList.add(a)</span><span class="s0">;</span><span class="s1"> 
+ 
+            a = </span><span class="s0">new </span><span class="s1">Album(</span><span class="s2">&quot;Prasenjit&quot;</span><span class="s0">, </span><span class="s3">14</span><span class="s0">, </span><span class="s1">covers[</span><span class="s3">7</span><span class="s1">])</span><span class="s0">;</span><span class="s1"> 
+            albumList.add(a)</span><span class="s0">;</span><span class="s1"> 
+ 
+            a = </span><span class="s0">new </span><span class="s1">Album(</span><span class="s2">&quot;Prasenjit&quot;</span><span class="s0">, </span><span class="s3">11</span><span class="s0">, </span><span class="s1">covers[</span><span class="s3">8</span><span class="s1">])</span><span class="s0">;</span><span class="s1"> 
+            albumList.add(a)</span><span class="s0">;</span><span class="s1"> 
+ 
+            a = </span><span class="s0">new </span><span class="s1">Album(</span><span class="s2">&quot;Prasenjit&quot;</span><span class="s0">, </span><span class="s3">17</span><span class="s0">, </span><span class="s1">covers[</span><span class="s3">9</span><span class="s1">])</span><span class="s0">;</span><span class="s1"> 
+            albumList.add(a)</span><span class="s0">;</span><span class="s1"> 
+ 
+            a = </span><span class="s0">new </span><span class="s1">Album(</span><span class="s2">&quot;Prasenjit&quot;</span><span class="s0">,</span><span class="s3">63</span><span class="s0">,</span><span class="s1">covers[</span><span class="s3">10</span><span class="s1">])</span><span class="s0">;</span><span class="s1"> 
+            albumList.add(a)</span><span class="s0">;</span><span class="s1"> 
+ 
+            albumAdapter.notifyDataSetChanged()</span><span class="s0">;</span><span class="s1"> 
+        } 
+ 
+        </span><span class="s4">/** 
+     * RecyclerView item decoration - give equal margin around grid item 
+     */</span><span class="s1"> 
+    </span><span class="s0">public class </span><span class="s1">GridSpacingItemDecoration </span><span class="s0">extends </span><span class="s1">RecyclerView.ItemDecoration { 
+ 
+        </span><span class="s0">private int </span><span class="s1">spanCount</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">private int </span><span class="s1">spacing</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">private boolean </span><span class="s1">includeEdge</span><span class="s0">;</span><span class="s1"> 
+ 
+        </span><span class="s0">public </span><span class="s1">GridSpacingItemDecoration(</span><span class="s0">int </span><span class="s1">spanCount</span><span class="s0">, int </span><span class="s1">spacing</span><span class="s0">, boolean </span><span class="s1">includeEdge) { 
+            </span><span class="s0">this</span><span class="s1">.spanCount = spanCount</span><span class="s0">;</span><span class="s1"> 
+            </span><span class="s0">this</span><span class="s1">.spacing = spacing</span><span class="s0">;</span><span class="s1"> 
+            </span><span class="s0">this</span><span class="s1">.includeEdge = includeEdge</span><span class="s0">;</span><span class="s1"> 
+        } 
+ 
+        @Override 
+        </span><span class="s0">public void </span><span class="s1">getItemOffsets(Rect outRect</span><span class="s0">, </span><span class="s1">View view</span><span class="s0">, </span><span class="s1">RecyclerView parent</span><span class="s0">, </span><span class="s1">RecyclerView.State state) { 
+            </span><span class="s0">int </span><span class="s1">position = parent.getChildAdapterPosition(view)</span><span class="s0">; </span><span class="s5">// item position</span><span class="s1"> 
+            </span><span class="s0">int </span><span class="s1">column = position % spanCount</span><span class="s0">; </span><span class="s5">// item column</span><span class="s1"> 
+ 
+            </span><span class="s0">if </span><span class="s1">(includeEdge) { 
+                outRect.left = spacing - column * spacing / spanCount</span><span class="s0">; </span><span class="s5">// spacing - column * ((1f / spanCount) * spacing)</span><span class="s1"> 
+                outRect.right = (column + </span><span class="s3">1</span><span class="s1">) * spacing / spanCount</span><span class="s0">; </span><span class="s5">// (column + 1) * ((1f / spanCount) * spacing)</span><span class="s1"> 
+ 
+                </span><span class="s0">if </span><span class="s1">(position &lt; spanCount) { </span><span class="s5">// top edge</span><span class="s1"> 
+                    outRect.top = spacing</span><span class="s0">;</span><span class="s1"> 
+                } 
+                outRect.bottom = spacing</span><span class="s0">; </span><span class="s5">// item bottom</span><span class="s1"> 
+            } </span><span class="s0">else </span><span class="s1">{ 
+                outRect.left = column * spacing / spanCount</span><span class="s0">; </span><span class="s5">// column * ((1f / spanCount) * spacing)</span><span class="s1"> 
+                outRect.right = spacing - (column + </span><span class="s3">1</span><span class="s1">) * spacing / spanCount</span><span class="s0">; </span><span class="s5">// spacing - (column + 1) * ((1f /    spanCount) * spacing)</span><span class="s1"> 
+                </span><span class="s0">if </span><span class="s1">(position &gt;= spanCount) { 
+                    outRect.top = spacing</span><span class="s0">; </span><span class="s5">// item top</span><span class="s1"> 
+                } 
+            } 
+        } 
+    } 
+ 
+    </span><span class="s4">/** 
+     * Converting dp to pixel 
+     */</span><span class="s1"> 
+    </span><span class="s0">private int </span><span class="s1">dpToPx(</span><span class="s0">int </span><span class="s1">dp) { 
+        Resources r = getResources()</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">return </span><span class="s1">Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP</span><span class="s0">, </span><span class="s1">dp</span><span class="s0">, </span><span class="s1">r.getDisplayMetrics()))</span><span class="s0">;</span><span class="s1"> 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public boolean </span><span class="s1">onCreateOptionsMenu(Menu menu) { 
+        MenuInflater inflater = getMenuInflater()</span><span class="s0">;</span><span class="s1"> 
+        inflater.inflate(R.menu.toolbar_menu</span><span class="s0">, </span><span class="s1">menu)</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">return super</span><span class="s1">.onCreateOptionsMenu(menu)</span><span class="s0">;</span><span class="s1"> 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public boolean </span><span class="s1">onOptionsItemSelected(MenuItem item) { 
+        </span><span class="s5">// Take appropriate action for each action item click</span><span class="s1"> 
+        </span><span class="s0">switch </span><span class="s1">(item.getItemId()) { 
+            </span><span class="s0">case </span><span class="s1">R.id.profile: 
+               Intent intent = </span><span class="s0">new </span><span class="s1">Intent(</span><span class="s0">this, </span><span class="s1">MainLogin.</span><span class="s0">class</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+                startActivity(intent)</span><span class="s0">;</span><span class="s1"> 
+                </span><span class="s0">return true;</span><span class="s1"> 
+            </span><span class="s0">case </span><span class="s1">R.id.purchase: 
+                Toast.makeText(getApplicationContext()</span><span class="s0">, </span><span class="s2">&quot;Purchasing...&quot;</span><span class="s0">, </span><span class="s1">Toast.LENGTH_SHORT).show()</span><span class="s0">;</span><span class="s1"> 
+                Intent purchaseIntent = </span><span class="s0">new </span><span class="s1">Intent(</span><span class="s0">this, </span><span class="s1">Purchase.</span><span class="s0">class</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+                startActivity(purchaseIntent)</span><span class="s0">;</span><span class="s1"> 
+                </span><span class="s0">return true;</span><span class="s1"> 
+            </span><span class="s0">default</span><span class="s1">: 
+                </span><span class="s0">return super</span><span class="s1">.onOptionsItemSelected(item)</span><span class="s0">;</span><span class="s1"> 
+        } 
+    } 
+ 
+ 
+} 
+ 
+ 
+</span></pre>
+</body>
+</html>

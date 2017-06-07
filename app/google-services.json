@@ -1,0 +1,50 @@
+{
+  "project_info": {
+    "project_number": "336529157715",
+    "firebase_url": "https://ihero-fa259.firebaseio.com",
+    "project_id": "ihero-fa259",
+    "storage_bucket": "ihero-fa259.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336529157715:android:8f6a75c2221ce0db",
+        "android_client_info": {
+          "package_name": "com.antherx.prasenjithiwale.ihero"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "336529157715-a92dj8n545dr8odje6ph6d2qjdkm8g6l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.antherx.prasenjithiwale.ihero",
+            "certificate_hash": "52d06eb2d632b99d7a6566949bcb0daa88bf97f8"
+          }
+        },
+        {
+          "client_id": "336529157715-shv2cc3o33q89383i2bc6onvfb6aduat.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBK0Q9rT1mBDhCVDCZkisGwPNP7IW1wffo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

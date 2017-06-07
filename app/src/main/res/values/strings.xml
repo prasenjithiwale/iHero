@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">iHero</string>
+
+    <string name="facebook_app_id">198892827287413</string>
+    <string name="fb_login_protocol_scheme">fb198892827287413</string>
+    <string name="userName">User Name</string>
+
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Daily Motivation</string>
+    <string name="slide_1_desc">Listen a motivational qoute and start your journey to the success</string>
+
+    <string name="slide_2_title"> Work Harder and Harder</string>
+    <string name="slide_2_desc">Not just Listen Work Harder and Harder and get closer to your success!</string>
+
+    <string name="slide_3_title">You are a Winner</string>
+    <string name="slide_3_desc">Motivate yourself, Work Harder and You will be WINNER of your own destiny your own life</string>
+
+    <string name="banner_ad_unit_id">ca-app-pub-8463426768049995~9235012262</string>
+    <string name="appwidget_text">Lovers</string>
+    <string name="appwidget_text1">Prasenjit</string>
+    <string name="appwidget_text2">Shubhangi</string>
+    <string name="configure">Configure</string>
+    <string name="add_widget">Add widget</string>
+
+
+    <string name="action_settings">Settings</string>
+    <string name="action_add_favourite">Add to Favourites</string>
+    <string name="action_play_next">Play Next</string>
+    <string name="backdrop_title">LOVE MUSIC</string>
+    <string name="backdrop_subtitle">This season top 20 albums</string>
+    <string name="read_story">Read Related Story</string>
+    <string name="profile">Profile</string>
+    <string name="purchase">Purchase and Shop</string>
+    <string name="purchasedia">Upgrade and have fun</string>
+
+    //String URL List
+
+    <string name="Url1">https://s-media-cache-ak0.pinimg.com/736x/7c/d6/65/7cd665a063e0366ac8358cb310c9a2b2.jpg</string>
+    <string name="Url2">http://www.success.com/sites/default/files/8_12.jpg</string>
+    <string name="Url3">https://s-media-cache-ak0.pinimg.com/736x/0b/30/b4/0b30b4d33fadb7da76f15fc1338c7e57.jpg</string>
+    <string name="Url4">https://cdn.motivationgrid.com/wp-content/uploads/2013/11/3-Motivational-Quotes.jpg</string>
+    <string name="Url5">https://s-media-cache-ak0.pinimg.com/736x/7d/da/77/7dda77480091ce71c5b44306400a24bd.jpg</string>
+    <string name="Url6">https://s-media-cache-ak0.pinimg.com/736x/ba/e6/5d/bae65d2bd204d64488efd8d04047b7a5.jpg</string>
+    <string name="Url7">https://s-media-cache-ak0.pinimg.com/736x/97/ef/ec/97efec507f7af177ff0e1abd86184c14.jpg</string>
+    <string name="Url8">https://s-media-cache-ak0.pinimg.com/236x/e8/96/fc/e896fc42b6911272129724e8c7383489.jpg</string>
+    <string name="Url9">https://s-media-cache-ak0.pinimg.com/736x/23/c9/0e/23c90ee7ae187154d1bbce2857769d4f.jpg</string>
+    <string name="Url10">https://s-media-cache-ak0.pinimg.com/736x/b5/3b/0f/b53b0fb4921620c21f7c34ee4d5a4a20.jpg</string>
+    <string name="Url11">https://cdn.motivationgrid.com/wp-content/uploads/2013/12/4-Motivational-Quotes.jpg</string>
+    <string name="Url12">https://s-media-cache-ak0.pinimg.com/736x/01/ea/60/01ea60d70ec387d1720e92d9292c3449.jpg</string>
+    <string name="Url13">https://s-media-cache-ak0.pinimg.com/736x/4c/e5/69/4ce569b1fcf859ad2e178c20142d5513.jpg</string>
+    <string name="Url14">https://s-media-cache-ak0.pinimg.com/236x/62/24/3b/62243ba1dee96cbba0778d2abc41af0e.jpg</string>
+    <string name="Url15">https://s-media-cache-ak0.pinimg.com/736x/83/58/62/835862f92de4430441f667c2510e3059.jpg</string>
+
+    //End String URL List
+
+    <string-array name="fadeText">
+        <item>Hello </item>
+        <item>Welcome to</item>
+        <item>iHero</item>
+    </string-array>
+
+    <string name="error_player">There was an error initializing the YouTubePlayer (%1$s)</string>
+
+</resources>
